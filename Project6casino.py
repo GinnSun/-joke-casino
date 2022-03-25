@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS casino(
 )"""
 cursor.executescript(moretable)
 database_casino.commit()
-
+# создание логина и пароля
 def user_login():
     global age
     global user
@@ -33,7 +33,7 @@ def user_login():
     else:
         print('Вы уже зарегистрированы!|You are already registered!')
         check_login()
-
+# проверка логина и пароля на совместимость
 def check_login():
     user_log = input('Repeat your login🤔: ')
     password_log = input('Repeat your password🤔: ')
@@ -47,6 +47,7 @@ def check_login():
             balance = i[0]
         print(f'YOUR CASH = {balance}')
         casino()
+# создание казино)
 def casino():
     print()
     for i in cursor.execute("SELECT casino_name FROM casino"):
